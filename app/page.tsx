@@ -1,9 +1,13 @@
+import Carroussel from "./components/Carroussel/Carroussel"
+import Video from "./components/video/Video"
+import styles from "./page.module.scss"
+
 export default function Home() {
   return (
-    <section className='py-24'>
-      <div className='container'>
-        <h1 className='text-3xl font-bold'>Next TS Starter</h1>
-      </div>
+    <section className='mainSection'>
+      <Video/>
+      <Carroussel/>
+      <div className={styles.spacer}></div>
     </section>
   )
 }
