@@ -36,5 +36,12 @@
                 font-weight: 300;
             }
         }
+
+        .footer{
+            display: flex;
+            gap: 40px;
+            justify-content: space-between;
+            font-size: 12px;
+        }
     }
 }

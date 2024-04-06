@@ -25,8 +25,9 @@ const Nav = () => {
         },
     ]
   return (
+    // motion : put the animation data in the variants linked file .
     <motion.div 
-        variants={slide} 
+        variants={menuSlide} 
         animate="enter" 
         exit="exit" 
         initial="initial" 
@@ -42,6 +43,11 @@ const Nav = () => {
                             return <PLink data={{...item, index}} key={`${index}-${item}`}/>
                         })
                     }
+            </div>
+            <div className={styles.footer}>
+                    <p>Instagram</p>
+                    <p>Facebook</p>
+                    <p>LinkedIn</p>
             </div>
         </div>
     </motion.div>
