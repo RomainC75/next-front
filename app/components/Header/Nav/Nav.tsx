@@ -2,7 +2,7 @@ import React from 'react'
 import styles from "./Nav.module.scss"
 import PLink, { ILink } from './Link/Link'
 import { useScroll, useTransform, motion, MotionValue } from "framer-motion";
-import { menuSlide } from '../anime';
+import { menuSlide, slide } from '../anime';
 
 const Nav = () => {
 
@@ -26,7 +26,7 @@ const Nav = () => {
     ]
   return (
     <motion.div 
-        variant={menuSlide} 
+        variants={slide} 
         animate="enter" 
         exit="exit" 
         initial="initial" 

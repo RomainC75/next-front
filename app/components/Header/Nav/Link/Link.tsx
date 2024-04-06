@@ -17,7 +17,7 @@ interface IPLinkProp {
 
 const PLink = ({data}: IPLinkProp) => {
   return (
-    <motion.div variant={slide} animate="enter" exit="exit" initial="initial" className={styles.link}>
+    <motion.div variants={slide} animate="enter" exit="exit" initial="initial" className={styles.link}>
         <Link href={data.href}>
             {data.title}
         </Link>
