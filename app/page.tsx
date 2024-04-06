@@ -13,7 +13,7 @@ export default function Home() {
       <Video/>
       <Carroussel/>
       <Contact/>
-      <div className={styles.spacer}></div>
+      
     </section>
     </>
   )

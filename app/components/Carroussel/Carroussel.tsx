@@ -39,6 +39,8 @@ export default function Carroussel() {
   const y3 = useTransform(scrollYProgress, [0, 1], [0, height*1.25]);
   const y4 = useTransform(scrollYProgress, [0, 1], [0, height*3]);
 
+  const circleHeight = useTransform(scrollYProgress, [0, 0.9], [100,0]);
+
   useEffect(() => {
     // smooth scroll
     const lenis = new Lenis();
@@ -58,7 +60,9 @@ export default function Carroussel() {
         <Column images={[images[6], images[7], images[8]]} y={y3}/>
         <Column images={[images[9], images[10], images[11]]} y={y4}/>
       </div>
-      <div className={styles.spacer}></div>
+      <motion.div style={{height: circleHeight}}  className={styles.circleContainer}>
+        <div className={styles.circle}></div>
+      </motion.div>
     </main>
   );
 }
@@ -66,14 +70,14 @@ export default function Carroussel() {
 const Column = ({ images, y = 0 }: IColumn) => {
   return (
     // motion : DOM primitives optimised for 60fps animation
-    <motion.div style={{ y }} className={styles.column}>
-      {images.map((src, index) => {
-        return (
-          <div key={index} className={styles.imageContainer}>
-            <Image src={`/images/${src}`} fill alt="image" />
-          </div>
-        );
-      })}
-    </motion.div>
+      <motion.div style={{ y }} className={styles.column}>
+        {images.map((src, index) => {
+          return (
+            <div key={index} className={styles.imageContainer}>
+              <Image src={`/images/${src}`} fill alt="image" />
+            </div>
+          );
+        })}
+      </motion.div>
   );
 };
