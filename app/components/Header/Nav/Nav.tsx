@@ -3,6 +3,7 @@ import styles from "./Nav.module.scss"
 import PLink, { ILink } from './Link/Link'
 import { useScroll, useTransform, motion, MotionValue } from "framer-motion";
 import { menuSlide, slide } from '../anime';
+import Curve from './Curve/Curve';
 
 const Nav = () => {
 
@@ -50,6 +51,7 @@ const Nav = () => {
                     <p>LinkedIn</p>
             </div>
         </div>
+        <Curve/>
     </motion.div>
   )
 }
