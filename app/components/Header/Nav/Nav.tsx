@@ -1,6 +1,8 @@
 import React from 'react'
 import styles from "./Nav.module.scss"
 import PLink, { ILink } from './Link/Link'
+import { useScroll, useTransform, motion, MotionValue } from "framer-motion";
+import { menuSlide } from '../anime';
 
 const Nav = () => {
 
@@ -23,7 +25,13 @@ const Nav = () => {
         },
     ]
   return (
-    <div className={styles.menu}>
+    <motion.div 
+        variant={menuSlide} 
+        animate="enter" 
+        exit="exit" 
+        initial="initial" 
+        className={styles.menu}
+    >
         <div className={styles.body}>
             <div className={styles.nav}>
                 <div className={styles.header}>
@@ -36,7 +44,7 @@ const Nav = () => {
                     }
             </div>
         </div>
-    </div>
+    </motion.div>
   )
 }
 

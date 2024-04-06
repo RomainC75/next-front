@@ -1,6 +1,8 @@
 import React from 'react'
 import styles from "./Link.module.scss"
 import Link from 'next/link';
+import { useScroll, useTransform, motion, MotionValue } from "framer-motion";
+import { slide } from '../../anime';
 
 export interface ILink{
     title: string;
@@ -15,11 +17,11 @@ interface IPLinkProp {
 
 const PLink = ({data}: IPLinkProp) => {
   return (
-    <div className={styles.link}>
+    <motion.div variant={slide} animate="enter" exit="exit" initial="initial" className={styles.link}>
         <Link href={data.href}>
             {data.title}
         </Link>
-    </div>
+    </motion.div>
   )
 }
 
