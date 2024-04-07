@@ -60,8 +60,8 @@ export default function Carroussel() {
         <Column images={[images[6], images[7], images[8]]} y={y3}/>
         <Column images={[images[9], images[10], images[11]]} y={y4}/>
       </div>
-      <motion.div style={{height: circleHeight}}  className={styles.circleContainer}>
-        <div className={styles.circle}></div>
+      <motion.div style={{height: circleHeight}} className={styles.circleContainer}>
+        <div  className={styles.circle}></div>
       </motion.div>
     </main>
   );

@@ -36,7 +36,7 @@
 
 .sliderContainer{
     position: absolute;
-    top: calc(100vh - 300px);
+    // top: calc(100vh - 300px);
     top: 0;
     left: 0;
     right: 0;
@@ -48,13 +48,14 @@
     background-color: black;
     user-select: none;
     mix-blend-mode: multiply;
+    
   }
   
   .slider{
     position: relative;
     white-space: nowrap;
     display: flex;
-    margin-top: 40%;
+    margin-top: 10vh;
             color: #ffffff;
             letter-spacing: -1vw;
             font-size: 30vw;

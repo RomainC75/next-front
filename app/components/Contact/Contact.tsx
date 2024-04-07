@@ -41,28 +41,28 @@ export default function Contact() {
                 </div>
                 <div className={styles.nav}>
                         <Rounded>
-                            <p>info@dennissnellenberg.com</p>
+                            <p>contact@gwash.com</p>
                         </Rounded>
                         <Rounded>
-                            <p>+31 6 27 84 74 30</p>
+                            <p>+31 6 00 00 00 00</p>
                         </Rounded>
                 </div>
                 <div className={styles.info}>
                     <div>
                         <span>
                             <h3>Version</h3>
-                            <p>2022 © Edition</p>
+                            <p>2024 © Edition</p>
                         </span>
                         <span>
                             <h3>Version</h3>
-                            <p>11:49 PM GMT+2</p>
+                            <p>1.0</p>
                         </span>
                     </div>
                     <div>
                         <span>
                             <h3>socials</h3>
                             <Magnetic>
-                                <p>Awwwards</p>
+                                <p>Linkedin</p>
                             </Magnetic>
                         </span>
                         <Magnetic>
@@ -70,9 +70,6 @@ export default function Contact() {
                         </Magnetic>
                         <Magnetic>
                             <p>Dribbble</p>
-                        </Magnetic>
-                        <Magnetic>
-                            <p>Linkedin</p>
                         </Magnetic>
                     </div>
                 </div>
