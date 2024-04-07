@@ -43,7 +43,7 @@ const Model = (props) => {
             color="white" 
             anchorX="center" 
             anchorY="middle"
-            >MY SUPER TEXT</Text>
+            >Gwash Films</Text>
         <mesh {...props} ref={meshRef}>
             <torusGeometry
                 // args={[tg.radius, tg.tube, tg.radialSegments, tg.tubularSegments, tg.arc]}
