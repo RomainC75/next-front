@@ -21,11 +21,11 @@ export default function Contact() {
                 <div className={styles.title}>
                     <span>
                         <div className={styles.imageContainer}>
-                            <Image 
+                            {/* <Image 
                             fill={true}
                             alt={"image"}
-                            src={`/images/background.jpg`}
-                            />
+                            src={`/images/gwash.gif`}
+                            /> */}
                         </div>
                         <h2>Let s work</h2>
                     </span>
