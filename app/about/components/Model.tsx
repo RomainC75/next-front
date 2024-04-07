@@ -16,23 +16,23 @@ const Model = (props) => {
         }
     })
 
-    const materialProps = useControls("materialprops",{
-        thickness: { value: 0.22, min: 0, max: 3, step: 0.05 },
-        roughness: { value: 0.3, min: 0, max: 1, step: 0.1 },
-        transmission: {value: 1, min: 0, max: 1, step: 0.1},
-        ior: { value: 1.2, min: 0, max: 3, step: 0.1 },
-        chromaticAberration: { value: 0.1, min: 0, max: 1},
-        backside: { value: true},
-    })
+    // const materialProps = useControls("materialprops",{
+    //     thickness: { value: 0.22, min: 0, max: 3, step: 0.05 },
+    //     roughness: { value: 0.3, min: 0, max: 1, step: 0.1 },
+    //     transmission: {value: 1, min: 0, max: 1, step: 0.1},
+    //     ior: { value: 1.2, min: 0, max: 3, step: 0.1 },
+    //     chromaticAberration: { value: 0.1, min: 0, max: 1},
+    //     backside: { value: true},
+    // })
 
-    const tg = useControls("tg",{
-        radius: { value: 10, min: 0, max: 20, step: 0.05 },
-        tube: { value: 6, min: 0, max: 10, step: 0.1 },
-        radialSegments: {value: 4, min: 0, max: 30, step: 0.1},
-        tubularSegments: { value: 200, min: 0, max: 200, step: 0.1 },
-        arc: { value: 6, min: 0, max: 6},
+    // const tg = useControls("tg",{
+    //     radius: { value: 10, min: 0, max: 20, step: 0.05 },
+    //     tube: { value: 6, min: 0, max: 10, step: 0.1 },
+    //     radialSegments: {value: 4, min: 0, max: 30, step: 0.1},
+    //     tubularSegments: { value: 200, min: 0, max: 200, step: 0.1 },
+    //     arc: { value: 6, min: 0, max: 6},
         
-    })
+    // })
 
   return (
     <group scale={viewport.width/8}>
@@ -45,11 +45,21 @@ const Model = (props) => {
             anchorY="middle"
             >Gwash Films</Text>
         <mesh {...props} ref={meshRef}>
-            <torusGeometry
+            {/* <torusGeometry
                 // args={[tg.radius, tg.tube, tg.radialSegments, tg.tubularSegments, tg.arc]}
                 // scale={{x:1,y:1,z:1}}
+            /> */}
+            <cylinderGeometry
+            args={[0.1,1.5,0.2,64,24]}
             />
-            <MeshTransmissionMaterial {...materialProps}/>
+            <MeshTransmissionMaterial 
+            thickness= {0.22}
+            roughness= {0.3}
+            transmission= {1}
+            ior= {1.2}
+            chromaticAberration= {0.1}
+            backside= {true}
+            />
             {/* <meshStandardMaterial
                 color="green" 
                 roughness={0.5}

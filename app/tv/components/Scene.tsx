@@ -74,37 +74,37 @@ const TV = () =>{
 const Scene = () => {
  
 
-  const ctrl = useControls("fog",{
-    near: { value: 0.7, min: 0, max: 30, step: 0.5 },
-    far: { value: 30, min: 0, max: 30, step: 0.5 },
-  })
+  // const ctrl = useControls("fog",{
+  //   near: { value: 0.7, min: 0, max: 30, step: 0.5 },
+  //   far: { value: 30, min: 0, max: 40, step: 0.5 },
+  // })
 
-  const cam = useControls("camera",{
-    x: { value: 0, min: 0, max: Math.PI, step: 0.1 },
-    y: { value: 0, min: 0, max: Math.PI, step: 0.1 },
-    z: { value: 0, min: 0, max: Math.PI, step: 0.1 },
-  })
+  // const cam = useControls("camera",{
+  //   x: { value: 0, min: 0, max: Math.PI, step: 0.1 },
+  //   y: { value: 0, min: 0, max: Math.PI, step: 0.1 },
+  //   z: { value: 0, min: 0, max: Math.PI, step: 0.1 },
+  // })
 
-  const pos = useControls("cameraPosition",{
-    x: { value: -8, min: -10, max: 20, step: 0.5 },
-    y: { value: 7, min: -10, max: 20, step: 0.5 },
-    z: { value: 12, min: -10, max: 20, step: 0.5 },
-  })
+  // const pos = useControls("cameraPosition",{
+  //   x: { value: -8, min: -10, max: 20, step: 0.5 },
+  //   y: { value: 7, min: -10, max: 20, step: 0.5 },
+  //   z: { value: 12, min: -10, max: 20, step: 0.5 },
+  // })
 
   return (
     <Canvas shadows 
     style={{backgroundColor:"black"}} 
-    camera={{ position: [pos.x, pos.y,pos.z], fov: 15 }} 
+    camera={{ position: [-1, 9, 15], fov: 15 }} 
     
     gl={{ alpha: false }} 
     pixelRatio={[1, 1.5]}
     >
       <OrbitControls maxPolarAngle={Math.PI /2} minPolarAngle={0}/>
       {/* <fog attach="fog" args={['black', 5, 40]} /> */}
-      <fog attach="fog" args={['black', ctrl.near, ctrl.far]} />
+      <fog attach="fog" args={['black', 7, 36.5]} />
       <Suspense fallback={null}>
         <group position={[0, -1, 0]}>
-          <VideoText position={[0, 1.3, -2]} rotation={[cam.x,cam.y,cam.z]} />
+          <VideoText position={[0, 1.3, -2]} rotation={[0,0,0]} />
           {/* <TV/> */}
           <Ground />
         </group>
