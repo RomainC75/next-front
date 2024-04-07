@@ -12,7 +12,6 @@ const Scene = () => {
 
       <directionalLight intensity={3} position={[0,3,2]}/>
       <Environment preset="city"/>
-      
         <Model/>
     </Canvas>
   )
