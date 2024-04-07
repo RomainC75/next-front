@@ -8,7 +8,7 @@ const Scene = () => {
   return (
     <Canvas style={{backgroundColor:"black"}}>
       <OrbitControls/>
-      <Perf position='top-left'/>
+      {/* <Perf position='top-left'/> */}
 
       <directionalLight intensity={3} position={[0,3,2]}/>
       <Environment preset="city"/>
