@@ -26,8 +26,8 @@ const TV = () =>{
   
   return (
     <mesh  position={[0, 0, -2]}>
-      <planeGeometry args={[5, 5]}/>
-      <meshStandardMaterial color="white" side={THREE.DoubleSide}>
+      <planeGeometry args={[15, 9]} />
+      <meshStandardMaterial emissive="white" side={THREE.DoubleSide}>
         <videoTexture attach="map" args={[video]}/>
         <videoTexture attach="emissiveMap" args={[video]}/>
       </meshStandardMaterial>
