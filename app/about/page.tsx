@@ -1,8 +1,18 @@
+"use client"
 import React from 'react'
+import dynamic from 'next/dynamic'
+
+const Scene = dynamic(() => import('./components/Scene'), {
+  loading: () => <p>Loading...</p>,
+  // avoid loading the component server side.
+  ssr: false
+})
 
 const About = () => {
   return (
-    <div>About</div>
+    <main className='relative h-screen'>
+      <Scene/>
+    </main>
   )
 }
 

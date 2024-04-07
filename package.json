@@ -9,13 +9,18 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@react-three/drei": "^9.105.2",
+    "@react-three/fiber": "^8.16.1",
     "@studio-freight/lenis": "^1.0.42",
+    "@types/three": "^0.163.0",
     "framer-motion": "^11.0.25",
     "gsap": "^3.12.5",
+    "leva": "^0.9.35",
     "next": "14.1.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "sass": "^1.74.1"
+    "sass": "^1.74.1",
+    "three": "^0.163.0"
   },
   "devDependencies": {
     "@types/node": "^20.11.30",
