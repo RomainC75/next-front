@@ -104,7 +104,7 @@ const Scene = () => {
       <fog attach="fog" args={['black', 7, 36.5]} />
       <Suspense fallback={null}>
         <group position={[0, -1, 0]}>
-          <VideoText position={[0, 1.3, -2]} rotation={[0,0,0]} />
+          <VideoText position={[0, 1.3, -2]} rotation={[0,0,0]} scale={[0.5,0.5,0.5]}/>
           {/* <TV/> */}
           <Ground />
         </group>
