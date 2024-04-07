@@ -18,7 +18,7 @@ function Ground() {
   const [floor, normal] = useTexture(['/images/SurfaceImperfections003_1K_var1.jpg', '/images/SurfaceImperfections003_1K_Normal.jpg'])
   return (
     <Reflector blur={[400, 100]} resolution={512} args={[10, 10]} mirror={0.5} mixBlur={6} mixStrength={1.5} rotation={[-Math.PI / 2, 0, Math.PI / 2]}>
-      {(Material, props) => <Material color="#a0a0a0" metalness={0.4} roughnessMap={floor} normalMap={normal} normalScale={[2, 2]} {...props} />}
+      {(Material, props) => <Material color="#a0a0a0" metalness={0.4} roughnessMap={floor} normalMap={normal} normalScale={new THREE.Vector2(2,2)} {...props} />}
     </Reflector>
   )
 }
@@ -69,7 +69,7 @@ const TV = () =>{
 
 const Scene = () => {
   return (
-    <Canvas shadows style={{backgroundColor:"black"}} camera={{ position: [0, 3, 100], fov: 15 }} concurrent gl={{ alpha: false }} pixelRatio={[1, 1.5]}>
+    <Canvas shadows style={{backgroundColor:"black"}} camera={{ position: [0, 3, 10], fov: 15 }} concurrent gl={{ alpha: false }} pixelRatio={[1, 1.5]}>
       <OrbitControls maxPolarAngle={Math.PI /2} minPolarAngle={0}/>
       
       {/* <directionalLight intensity={3} position={[0,3,2]}/> */}
