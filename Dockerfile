@@ -1,16 +1,35 @@
-FROM node:18-alpine AS base
+FROM node:20-alpine as base
+RUN apk add --no-cache g++ make py3-pip libc6-compat
+WORKDIR /app
+COPY package*.json ./
+EXPOSE 3005
 
-# Install dependencies only when needed
-FROM base AS deps
-# Check https://github.com/nodejs/docker-node/tree/b4117f9333da4138b03a546ec926ef50a31506c3#nodealpine to understand why libc6-compat might be needed.
-RUN apk add --no-cache libc6-compat
+FROM base as builder
+WORKDIR /app
+COPY . .
+RUN npm run build
+
+
+FROM base as production
 WORKDIR /app
 
-# Install dependencies based on the preferred package manager
-COPY package.json yarn.lock* package-lock.json* pnpm-lock.yaml* ./
-RUN \
-  if [ -f yarn.lock ]; then yarn --frozen-lockfile; \
-  elif [ -f package-lock.json ]; then npm ci; \
-  elif [ -f pnpm-lock.yaml ]; then yarn global add pnpm && pnpm i --frozen-lockfile; \
-  else echo "Lockfile not found." && exit 1; \
-  fi
+ENV NODE_ENV=production
+RUN npm ci
+
+RUN addgroup -g 1001 -S nodejs
+RUN adduser -S nextjs -u 1001
+USER nextjs
+
+
+COPY --from=builder --chown=nextjs:nodejs /app/.next ./.next
+COPY --from=builder /app/node_modules ./node_modules
+COPY --from=builder /app/package.json ./package.json
+COPY --from=builder /app/public ./public
+
+CMD npm start
+
+FROM base as dev
+ENV NODE_ENV=development
+RUN npm install 
+COPY . .
+CMD npm run dev
